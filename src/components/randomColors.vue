@@ -1,8 +1,11 @@
 <template>
     <div class="container">
         <div class="row">
+            <div class="col-12 col-lg-2 alert alert-success mt-3 mx-auto text-center" role="alert" id="alert">hex-код скопирован!</div>
+        </div>
+        <div class="row main">
             <div class="colors-container">
-                <div class="col col-2">
+                <div class="col col-6 col-lg-2">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -12,7 +15,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-2">
+                <div class="col col-6 col-lg-2">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -22,7 +25,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-2">
+                <div class="col col-6 col-lg-2">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -32,7 +35,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-2">
+                <div class="col col-6 col-lg-2">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -42,7 +45,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-2">
+                <div class="col col-6 col-lg-2">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -52,7 +55,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-2">
+                <div class="col col-6 col-lg-2">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -63,7 +66,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-2 alert alert-success mt-3 mx-auto text-center" role="alert" id="alert">hex-код скопирован!</div>
+        </div>
+        <div class="row">
+            <button class="btn btn-lg btn-outline-success col-8 col-lg-2 mx-auto mt-4" @click="this.setRandomColor()">Поменять цвета</button>
         </div>
     </div> 
 </template>
@@ -183,6 +188,10 @@
 </script>
 
 <style scoped>
+    .main {
+        width: 60vw;
+        height: 60vh;
+    }
     .colors-container {
         position: absolute;
         top: 50%;
@@ -194,12 +203,12 @@
     }
 
     .col {
-        flex: 1;
+        /* flex: 1; */
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background-color: cadetblue;
+        background-color: rgb(151, 224, 227);
     }
 
     .col span {
