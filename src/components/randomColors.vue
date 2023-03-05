@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-lg-2 alert alert-success mt-3 mx-auto text-center" role="alert" id="alert">hex-код скопирован!</div>
+            <div class="col-6 col-lg-2 alert alert-success mt-3 mx-auto text-center" role="alert" id="alert">hex-код скопирован!</div>
         </div>
-        <div class="row main">
-            <div class="colors-container">
-                <div class="col col-6 col-lg-2">
+        <div class="row">
+            <div class="colors-container p-0 mx-auto">
+                <div class="item">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -15,7 +15,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-6 col-lg-2">
+                <div class="item">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -25,7 +25,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-6 col-lg-2">
+                <div class="item">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -35,7 +35,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-6 col-lg-2">
+                <div class="item">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -45,7 +45,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-6 col-lg-2">
+                <div class="item">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -55,7 +55,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="col col-6 col-lg-2">
+                <div class="item">
                     <span>hex</span>
                     <div class="icon" data-type="notJoined">
                         <svg 
@@ -68,7 +68,7 @@
             </div>
         </div>
         <div class="row">
-            <button class="btn btn-lg btn-outline-success col-8 col-lg-2 mx-auto mt-4" @click="this.setRandomColor()">Поменять цвета</button>
+            <button class="btn btn-lg btn-outline-success col-8 col-lg-2 mx-auto mt-5" @click="this.setRandomColor()">Поменять цвета</button>
         </div>
     </div> 
 </template>
@@ -102,7 +102,7 @@
         },
         methods: {
             setRandomColor(isInitial) {
-                const cols = document.querySelectorAll('.col')
+                const cols = document.querySelectorAll('.item')
                 const colorsArr = isInitial ? this.getColorsFromHash() : []
 
                 cols.forEach((col, index) => {
@@ -188,38 +188,45 @@
 </script>
 
 <style scoped>
-    .main {
-        width: 60vw;
-        height: 60vh;
-    }
     .colors-container {
-        position: absolute;
+        /* position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); */
         display: flex;
-        width: 60vw;
-        height: 60vh;
+        align-items: center;
+        flex-wrap: wrap;   
+        max-width: 1008px;
+        min-width: 336px;
+        /* height: 60vh; */
+        /* height: 90vh; */
     }
 
-    .col {
+    .item {
+        width: fit-content;
+        background-color: rgb(151, 224, 227);
+        height: 50vh;
+        padding: 1.5em;
         /* flex: 1; */
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background-color: rgb(151, 224, 227);
+        /* flex-basis: 170; */
     }
 
-    .col span {
-        font-size: 1.5rem;
+    .item span {
+        /* font-size: 1.5rem; */
+        min-width: 7.5rem;
+        max-width: 10rem;
+        text-align: center;
         font-weight: bold;
         border-radius: 0.75rem;
         padding: 0.75rem;
         transition: background .2s;
     }
 
-    .col span:hover {
+    .item span:hover {
         background: rgba(0,0,0,0.1);
         cursor: pointer;
     }
@@ -249,4 +256,10 @@
         visibility: hidden;
         transition: visibility .5s;
     }
+
+    /* @media screen and (max-width: 768) {
+        .colors-container {
+            flex-direction: column;   
+        }
+    } */
 </style>
