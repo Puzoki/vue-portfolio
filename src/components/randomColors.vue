@@ -189,23 +189,16 @@
 
 <style scoped>
     .colors-container {
-        /* position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); */
         display: flex;
-        align-items: center;
         flex-wrap: wrap;   
         max-width: 1008px;
         min-width: 336px;
-        /* height: 60vh; */
-        /* height: 90vh; */
     }
 
     .item {
-        width: fit-content;
+        /* width: fit-content; */
+        height: 30vh;
         background-color: rgb(151, 224, 227);
-        height: 50vh;
         padding: 1.5em;
         /* flex: 1; */
         display: flex;
@@ -257,9 +250,9 @@
         transition: visibility .5s;
     }
 
-    /* @media screen and (max-width: 768) {
-        .colors-container {
-            flex-direction: column;   
+    @media screen and (max-width: 768) {
+        .item {
+            height: 30vh !important;
         }
-    } */
+    }
 </style>
